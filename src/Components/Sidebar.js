@@ -14,11 +14,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="zuppa-sidebar">
-      <img
-        className="s-image"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_szKuNc_U549YctVEiWWkBuRS0GaTnE_h2Q&s"
-        alt="profile"
-      />
+   
       <br />
       <br />
       <div className="paragraph-icon">
