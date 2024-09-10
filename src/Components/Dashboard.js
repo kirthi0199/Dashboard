@@ -82,12 +82,19 @@ const Dashboard = () => {
 useEffect(() => {
   ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 }, []);
+const handleFleetStatusClick = () => {
+  ReactGA.event({
+    category: 'Fleet',
+    action: 'Click on Fleet Status',
+    label: 'Fleet Status',
+  });
+};
   return (
     <div className="container-fluid" style={{ marginTop: "-68px" }}>
       <div className="row">
         {/* Fleet Status */}
         <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card border-left-primary shadow h-100">
+        <div className="card border-left-primary shadow h-100" onClick={handleFleetStatusClick}>
             <div className="card-body">
               <div className="row no-gutters">
                 <div className="col mr-2">
