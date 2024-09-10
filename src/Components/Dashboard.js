@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React,{useEffect} from "react";
 import Stack from "@mui/material/Stack";
 import LinearProgress, {
   linearProgressClasses,
@@ -36,8 +36,6 @@ const StyledText = styled("text")(({ theme }) => ({
 
 
 
-useEffect (() =>
-ReactGA.pageview(window.location,pathname));
 
 function PieCenterLabel({ children }) {
   const { width, height, left, top } = useDrawingArea();
@@ -81,6 +79,9 @@ const Dashboard = () => {
     },
   ];
 
+useEffect(() => {
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+}, []);
   return (
     <div className="container-fluid" style={{ marginTop: "-68px" }}>
       <div className="row">
