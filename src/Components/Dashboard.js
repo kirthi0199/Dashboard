@@ -14,7 +14,7 @@ import { styled } from "@mui/material/styles";
 import Card from "./Card";
 import FleetCard from "./FleetCard";
 import DataLayer from "./DataLayer/DataLayer";
-
+import  ReactGA from "react-ga4";
 const data = [
   { value: 42.5, color: "#4e73df" },
   { value: 5, color: "#f6c23e" },
@@ -33,6 +33,11 @@ const StyledText = styled("text")(({ theme }) => ({
   dominantBaseline: "central",
   fontSize: 30,
 }));
+
+
+
+useEffect (() =>
+ReactGA.pageview(window.location,pathname));
 
 function PieCenterLabel({ children }) {
   const { width, height, left, top } = useDrawingArea();
