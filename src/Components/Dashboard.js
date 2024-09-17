@@ -82,6 +82,7 @@ const Dashboard = () => {
 useEffect(() => {
   ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 }, []);
+
 const handleFleetStatusClick = () => {
   ReactGA.event({
     category: 'Fleet',

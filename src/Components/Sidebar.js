@@ -24,6 +24,14 @@ useEffect(() => {
       label: 'Hardware Page Navigation'  // Optional label
     });
   };
+  const handleSettingIconClick = () => {
+    // Log the event to Google Analytics
+    ReactGA.event({
+      category: 'User Interaction',  // Custom category
+      action: 'Click on Setting Icon',  // Custom action
+      label: 'setting Page Navigation'  // Optional label
+    });
+  };
   return (
     <div className="zuppa-sidebar">
    
@@ -50,9 +58,9 @@ useEffect(() => {
         <p>
           <DonutSmallIcon />
         </p>
-        <p>
-          <SettingsIcon />
-        </p>
+        <div onClick={handleSettingIconClick} style={{ cursor: 'pointer' }}>
+  <SettingsIcon />
+</div>
        
 
         <Link to="/hardware" onClick={handleHardwareIconClick}>
