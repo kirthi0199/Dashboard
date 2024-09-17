@@ -58,9 +58,9 @@ useEffect(() => {
         <p>
           <DonutSmallIcon />
         </p>
-        <div onClick={handleSettingIconClick} style={{ cursor: 'pointer' }}>
+        <p onClick={handleSettingIconClick} style={{ cursor: 'pointer' }}>
   <SettingsIcon />
-</div>
+</p>
        
 
         <Link to="/hardware" onClick={handleHardwareIconClick}>
