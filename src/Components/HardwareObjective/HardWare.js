@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import "./HardWare.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +10,17 @@ const navigate=useNavigate()
 const HomePage =()=>{
     navigate("/")
 }
+useEffect(() => {
+  // This is where you would track gender data
+  // Replace 'YOUR_GENDER_VALUE' with the actual gender value you want to track
+  const userGender = 'YOUR_GENDER_VALUE'; // This should be fetched from your user state or context
 
+  if (window.gtag) {
+    window.gtag('event', 'gender', {
+      'gender': userGender
+    });
+  }
+}, []);
   return (
 <div className='container'>
 <div className='row'>
